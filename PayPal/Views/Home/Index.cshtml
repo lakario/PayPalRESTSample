@@ -1,0 +1,19 @@
+﻿<form action="paypal/createpayment" method="post">
+    <div>
+        @Html.Label("Description")
+        @Html.TextBox("Description", null, new { required = "required" })
+    </div>
+    <div>
+        @Html.Label("Price")
+        @Html.TextBox("Price", null, new { required = "required" })
+    </div>
+    <div>
+        @Html.Label("Tax")
+        @Html.TextBox("Tax")
+    </div>
+    <div>
+        @Html.Label("Shipping")
+        @Html.TextBox("Shipping")
+    </div>
+    <button type="submit">Submit</button>
+</form>

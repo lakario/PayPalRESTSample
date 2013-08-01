@@ -1,0 +1,33 @@
+﻿@model PayPal.Models.PayPalViewData
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    
+    @if (Model.ErrorMessage != null) {
+        <h3>Error message</h3> 
+        <p>@Model.ErrorMessage</p>
+    }
+
+    @if (Model.JsonRequest != null) {
+        <h3>JSON Request</h3>
+        <pre>@Model.JsonRequest</pre>
+    }
+
+    @if (Model.JsonResponse != null) {
+        <h3>JSON Response</h3>
+        <pre>@Model.JsonResponse</pre>
+    }
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

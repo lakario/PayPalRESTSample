@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Error";
+}
+
+<h2>Something went wrong.</h2>
+
+@if (ViewBag.ErrorMessage != null) {
+    <h3>Error message</h3> 
+    <p>@ViewBag.ErrorMessage</p>
+}
+
+@if (ViewBag.JsonRequest != null) {
+    <h3>JSON Request</h3>
+    <pre>@ViewBag.JsonRequest</pre>
+}
+
+@if (ViewBag.JsonResponse != null) {
+    <h3>JSON Response</h3>
+    <pre>@ViewBag.JsonResponse</pre>
+}

@@ -1,0 +1,31 @@
+﻿@model PayPal.Models.PayPalViewData
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <h1>Error.</h1>
+    <h2>An error occurred while processing your request.</h2>
+    
+    @if (Model.ErrorMessage != null) {
+        <h3>Error message</h3> 
+        <p>@Model.ErrorMessage</p>
+    }
+
+    @if (Model.JsonRequest != null) {
+        <h3>JSON Request</h3>
+        <pre>@Model.JsonRequest</pre>
+    }
+
+    @if (Model.JsonResponse != null) {
+        <h3>JSON Response</h3>
+        <pre>@Model.JsonResponse</pre>
+    }
+</body>
+</html>

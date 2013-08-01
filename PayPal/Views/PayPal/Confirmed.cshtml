@@ -1,0 +1,19 @@
+﻿@model PayPal.Models.ConfirmedViewData
+@{
+    ViewBag.Title = "Confirmed";
+}
+
+<h2>Confirm Your Order</h2>
+
+<form action="/paypal/capture" method="post">
+    <input type="hidden" name="authorizationId" value="@Model.AuthorizationId" />
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/paypal/void" method="post">
+    <input type="hidden" name="authorizationId" value="@Model.AuthorizationId" />
+    <button type="submit">Cancel</button>
+</form>
+
+
+<p><a href="/">Start over</a></p>
